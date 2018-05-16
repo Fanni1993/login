@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+	<input id="myform" type=text></input>
+	<input id="mypass" type=text></input>
+	<button  onclick="submitr()" type="submit">Submit</button>
+</body>
+
+<script type="text/javascript">
+	let submitr = () => {
+	var body = {'name': document.getElementById("myform").value,
+				'password': document.getElementById('mypass').value}
+
+	var request = new XMLHttpRequest();
+						request.open("POST", "/save");
+						request.setRequestHeader("Content-Type", "application/json");
+						request.send(JSON.stringify(body));
+	console.log(body)
+		}
+</script>
+</html>
